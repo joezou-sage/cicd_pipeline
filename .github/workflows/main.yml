@@ -1,7 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-<<<<<<< HEAD
-name: CI_Pipeline
+name: CICD_Pipeline
 
 # Controls when the action will run. 
 on:
@@ -10,17 +9,6 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-=======
-name: CICD_pipeline
-
-# Controls when the action will run. 
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
->>>>>>> 1d83de5bc59cc98beb02d6c2537a1e19612666d4
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -46,7 +34,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-<<<<<<< HEAD
 
       - name: Install Salesforce CLI
         run: |
@@ -64,7 +51,5 @@ jobs:
         env:
           SALESFORCE_JWT_SECRET_KEY: ${{ secrets.SALESFORCE_JWT_SECRET_KEY }}
       # Create new scratch org to test code. 
-      # - name: Create Test Scratch Org
-      #   run: sfdx force:org:create -v devhub -s -f config/project-scratch-def.json -a ciorg -d 1
-=======
->>>>>>> 1d83de5bc59cc98beb02d6c2537a1e19612666d4
+      - name: Create Test Scratch Org
+        run: sfdx force:org:create -v devhub -s -f config/project-scratch-def.json -a ciorg -d 1
